@@ -7,17 +7,24 @@ var userClickedPattern = [];
 
 var level = 0;
 var started = false;
+var score = 0;
+var highScore = 0;
 
 //start the game
 $(".start-btn").click(function () {
 	started = true;
 	hideButton(this);
+	viewDisplay();
 	nextSequence();
 	showLevel();
 });
 
 function hideButton(btn) {
 	$(btn).css("display", "none");
+}
+
+function viewDisplay() {
+	$(".display").css("display", "block");
 }
 
 // The random color generator
@@ -39,6 +46,10 @@ function nextSequence() {
 
 	level++;
 	showLevel();
+	showRemarks(level);
+	setTimeout(() => {
+		showLevel();
+	}, 1000);
 }
 
 function showLevel() {
@@ -82,6 +93,7 @@ function matchPattern(currentLevel) {
 		// if they have finished their sequence
 		if (userClickedPattern.length === gamePattern.length) {
 			console.log("success!");
+			updateScore();
 			setTimeout(() => {
 				nextSequence();
 			}, 1000);
@@ -94,6 +106,13 @@ function matchPattern(currentLevel) {
 	}
 }
 
+function updateScore() {
+	score += level;
+	highScore = Math.max(highScore, score);
+	$(".score").text("Score: " + score);
+	$(".high-score").text("High Score: " + highScore);
+}
+
 function gameOver() {
 	playSound("wrong");
 	$("body").addClass("game-over");
@@ -103,7 +122,6 @@ function gameOver() {
 	$("#level-title").text("game over!");
 	$(".start-btn").text("Restart");
 	showButton();
-
 	started = false;
 	$(".start-btn").click(startOver());
 }
@@ -114,4 +132,42 @@ function showButton() {
 function startOver() {
 	level = 0;
 	gamePattern = [];
+	score = 0;
+	updateScore();
+}
+
+function showRemarks(level) {
+	let remark = "";
+	switch (level) {
+		case 3:
+			remark = "Nice Going!";
+			break;
+		case 5:
+			remark = "Good Job!";
+			break;
+		case 7:
+			remark = "Well Played!";
+			break;
+		case 10:
+			remark = "Excellent!";
+			break;
+		case 12:
+			remark = "Fantastic!";
+			break;
+		case 14:
+			remark = "Superb!";
+			break;
+		case 16:
+			remark = "Marvelous!";
+			break;
+		case 18:
+			remark = "Sensational!";
+			break;
+		default:
+			console.log(level);
+			break;
+	}
+	if (remark != "") {
+		$("#level-title").text(remark);
+	}
 }

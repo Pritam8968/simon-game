@@ -6,7 +6,7 @@
 	padding: 0;
 }
 body {
-	background-color: #01152a;
+	background-color: #011f3f;
 	text-align: center;
 }
 
@@ -18,8 +18,8 @@ body {
 	text-transform: uppercase;
 }
 .start-btn {
-	background: #2c8bd3;
-	background-image: linear-gradient(to bottom, #0c4a7a, #2b49b8);
+	background: #4caf50;
+	background-image: linear-gradient(to bottom, #4caf50, #8cbc8d);
 	border: none;
 	border-radius: 28px;
 	color: #ffffff;
@@ -75,8 +75,20 @@ body {
 	box-shadow: 0 0 20px white;
 }
 
+.display {
+	display: none;
+	font-family: "Press Start 2P", cursive;
+	margin: 20px 0 20px;
+}
+.score,
+.high-score {
+	color: #eeeeee;
+	font-size: 1.5rem;
+	margin: 10px;
+}
+
 footer {
-	color: #f1f1f1;
+	color: #eeeeee;
 	font-family: "Press Start 2P", cursive;
 	line-height: 2.5;
 	margin-top: 40px;
@@ -88,6 +100,7 @@ footer p {
 }
 footer p a {
 	color: #3cfcaf;
+	text-decoration: none;
 }
 footer p a:hover {
 	color: cyan;
@@ -120,6 +133,9 @@ footer p a:hover {
 	.start-btn {
 		font-size: 12px;
 	}
+	.display p {
+		font-size: 1.2rem;
+	}
 	.btn {
 		border-width: 5px;
 		height: 9rem;
@@ -127,6 +143,8 @@ footer p a:hover {
 		width: 9rem;
 	}
 	footer {
-		font-size: 9px;
+		font-size: 10px;
+		position: relative;
+		top: 50px;
 	}
 }
