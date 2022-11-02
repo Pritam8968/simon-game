@@ -1,0 +1,132 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #011f3f;
+	text-align: center;
+}
+
+#level-title {
+	color: #fef2bf;
+	font-family: "Press Start 2P", cursive;
+	font-size: 3rem;
+	margin: 5% auto 2%;
+	text-transform: uppercase;
+}
+.start-btn {
+	background: #2c8bd3;
+	background-image: linear-gradient(to bottom, #0c4a7a, #2b49b8);
+	border: none;
+	border-radius: 28px;
+	color: #ffffff;
+	font-family: "Press Start 2P", cursive;
+	font-size: 20px;
+	margin-bottom: 30px;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.start-btn:hover {
+	background: #3cfcaf;
+	background-image: linear-gradient(to bottom, #3cfcaf, #3498db);
+	text-decoration: none;
+}
+.container {
+	display: block;
+}
+
+.btn {
+	border: 10px solid black;
+	border-radius: 20%;
+	display: inline-block;
+	height: 200px;
+	margin: 25px;
+	width: 200px;
+}
+
+.game-over {
+	background-color: red;
+	opacity: 0.8;
+}
+
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: green;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.pressed {
+	background-color: grey;
+	box-shadow: 0 0 20px white;
+}
+
+footer {
+	color: #f1f1f1;
+	font-family: "Press Start 2P", cursive;
+	line-height: 2.5;
+	margin-top: 40px;
+	padding: 5%;
+}
+footer p {
+	margin: auto;
+	width: 80%;
+}
+footer p a {
+	color: #3cfcaf;
+}
+footer p a:hover {
+	color: cyan;
+	display: inline-block;
+	transform: scale(1.1);
+}
+
+@media screen and (min-width: 420px) and (max-width: 1020px) {
+	#level-title {
+		font-size: 2rem;
+		line-height: 2;
+	}
+	.start-btn {
+		font-size: 15px;
+	}
+	.btn {
+		border-width: 7px;
+		height: 10rem;
+		width: 10rem;
+	}
+	footer {
+		font-size: 10px;
+	}
+}
+@media screen and (max-width: 420px) {
+	#level-title {
+		font-size: 1.7rem;
+		line-height: 2;
+	}
+	.start-btn {
+		font-size: 13px;
+	}
+	.btn {
+		border-width: 5px;
+		height: 9rem;
+		width: 9rem;
+		margin: 15px;
+	}
+	footer {
+		font-size: 9px;
+	}
+}
