@@ -6,9 +6,11 @@ var gamePattern = [];
 var userClickedPattern = [];
 
 var level = 0;
+var started = false;
 
 //start the game
 $(".start-btn").click(function () {
+	started = true;
 	hideButton(this);
 	nextSequence();
 	showLevel();
@@ -45,6 +47,9 @@ function showLevel() {
 
 // user play area
 $(".btn").on("click", function () {
+	if (started === false) {
+		return;
+	}
 	let userChosenColor = this.id;
 	userClickedPattern.push(userChosenColor);
 
@@ -98,6 +103,8 @@ function gameOver() {
 	$("#level-title").text("game over!");
 	$(".start-btn").text("Restart");
 	showButton();
+
+	started = false;
 	$(".start-btn").click(startOver());
 }
 
